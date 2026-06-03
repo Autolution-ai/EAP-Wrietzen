@@ -1,5 +1,6 @@
 import type { LucideIcon } from 'lucide-react';
 import { Cable, ShieldCheck, Building2, Wrench } from 'lucide-react';
+import { images } from '@/lib/images';
 
 export type Job = {
   id: string;
@@ -8,6 +9,7 @@ export type Job = {
   description: string;
   icon: LucideIcon;
   tasks: string[];
+  image: string;
 };
 
 // Eine Quelle fuer: Stellen-Karten, Funnel-Optionen und JobPosting-Schema.
@@ -19,6 +21,7 @@ export const jobs: Job[] = [
     description:
       'Du installierst und wartest elektrische Anlagen auf Baustellen und in Bestandsgebäuden in der Region.',
     icon: Cable,
+    image: images.hausinstallation,
     tasks: [
       'Hausinstallation und Altbausanierung',
       'Erdungsanlagen und Baustrom',
@@ -32,6 +35,7 @@ export const jobs: Job[] = [
     description:
       'Du baust und betreust Brandmelde- und Schwachstromanlagen, ein wachsender Schwerpunkt im Betrieb.',
     icon: ShieldCheck,
+    image: images.brandmelde,
     tasks: [
       'Brandmeldetechnik installieren und prüfen',
       'Daten- und Sicherheitsverkabelung',

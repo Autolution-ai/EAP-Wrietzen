@@ -1,12 +1,13 @@
 'use client';
 
-import { Flame, Home, Building, PlugZap, Hammer, Zap } from 'lucide-react';
+import { Flame, Home, Zap } from 'lucide-react';
 import { Section, FadeItem } from '@/components/ui/Section';
+import { images } from '@/lib/images';
 
 // Schwerpunkt Brandmeldetechnik + Hausinstallation, Rest kompakt ergaenzend.
 const featured = [
-  { icon: Flame, title: 'Brandmeldetechnik', text: 'Planung, Installation und Prüfung von Brandmelde- und Sicherheitsanlagen.' },
-  { icon: Home, title: 'Hausinstallation', text: 'Komplette Elektroinstallation für Wohn- und Gewerbeobjekte.' },
+  { icon: Flame, title: 'Brandmeldetechnik', text: 'Planung, Installation und Prüfung von Brandmelde- und Sicherheitsanlagen.', image: images.brandmelde },
+  { icon: Home, title: 'Hausinstallation', text: 'Komplette Elektroinstallation für Wohn- und Gewerbeobjekte.', image: images.hausinstallation },
 ];
 
 const more = ['Altbausanierung', 'Erdungsanlagen', 'Baustrom', 'Industriebau', 'Hausbau', 'Elektroinstallation'];
@@ -28,11 +29,25 @@ export function Services() {
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           {featured.map((s) => (
             <FadeItem key={s.title}>
-              <div className="flex h-full gap-4 rounded-2xl border border-anthracite-700 bg-anthracite-800 p-7">
-                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-lg bg-signal text-anthracite-950">
+              <div className="relative flex h-full gap-4 overflow-hidden rounded-2xl border border-anthracite-700 p-7">
+                {/* Hintergrundbild des Arbeitsbereichs + dunkles Overlay */}
+                <div
+                  className="pointer-events-none absolute inset-0 bg-cover bg-center"
+                  style={{ backgroundImage: `url(${s.image})` }}
+                  aria-hidden
+                />
+                <div
+                  className="pointer-events-none absolute inset-0"
+                  style={{
+                    background:
+                      'linear-gradient(110deg, rgba(20,24,27,0.95) 0%, rgba(20,24,27,0.82) 60%, rgba(20,24,27,0.62) 100%)',
+                  }}
+                  aria-hidden
+                />
+                <span className="relative grid h-12 w-12 shrink-0 place-items-center rounded-lg bg-signal text-anthracite-950">
                   <s.icon className="h-6 w-6" aria-hidden />
                 </span>
-                <div>
+                <div className="relative">
                   <h3 className="text-xl font-bold text-white">{s.title}</h3>
                   <p className="mt-2 text-anthracite-300">{s.text}</p>
                 </div>
