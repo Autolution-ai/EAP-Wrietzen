@@ -25,8 +25,22 @@ export function Careers() {
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           {jobs.map((job) => (
             <FadeItem key={job.id}>
-              <article className="flex h-full flex-col rounded-2xl border border-anthracite-700 bg-anthracite-800 p-7 transition-colors duration-200 hover:border-signal">
-                <div className="mb-5 flex items-start justify-between gap-4">
+              <article className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-anthracite-700 p-7 transition-colors duration-200 hover:border-signal">
+                {/* Hintergrundbild des Arbeitsbereichs + dunkles Overlay */}
+                <div
+                  className="pointer-events-none absolute inset-0 bg-cover bg-center"
+                  style={{ backgroundImage: `url(${job.image})` }}
+                  aria-hidden
+                />
+                <div
+                  className="pointer-events-none absolute inset-0"
+                  style={{
+                    background:
+                      'linear-gradient(180deg, rgba(20,24,27,0.86) 0%, rgba(20,24,27,0.94) 100%)',
+                  }}
+                  aria-hidden
+                />
+                <div className="relative mb-5 flex items-start justify-between gap-4">
                   <span className="grid h-12 w-12 place-items-center rounded-lg bg-signal/10 text-signal">
                     <job.icon className="h-6 w-6" aria-hidden />
                   </span>
@@ -34,9 +48,9 @@ export function Careers() {
                     {job.short}
                   </span>
                 </div>
-                <h3 className="text-xl font-bold text-white">{job.title}</h3>
-                <p className="mt-2 text-anthracite-300">{job.description}</p>
-                <ul className="mt-5 space-y-2">
+                <h3 className="relative text-xl font-bold text-white">{job.title}</h3>
+                <p className="relative mt-2 text-anthracite-300">{job.description}</p>
+                <ul className="relative mt-5 space-y-2">
                   {job.tasks.map((t) => (
                     <li key={t} className="flex items-start gap-2 text-sm text-anthracite-300">
                       <Check className="mt-0.5 h-4 w-4 shrink-0 text-signal" aria-hidden />
@@ -44,7 +58,7 @@ export function Careers() {
                     </li>
                   ))}
                 </ul>
-                <div className="mt-7 pt-2">
+                <div className="relative mt-7 pt-2">
                   <LinkButton href={`/bewerben?stelle=${job.id}`} className="w-full">
                     Auf diese Stelle bewerben
                     <ArrowRight className="h-5 w-5" aria-hidden />

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { MapPin, ArrowRight } from 'lucide-react';
 import { LinkButton } from '@/components/ui/Button';
 import { company } from '@/lib/company';
+import { images } from '@/lib/images';
 
 const item = {
   hidden: { opacity: 0, y: 24 },
@@ -13,12 +14,18 @@ const item = {
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-anthracite-950 pt-28 pb-20 sm:pt-36 sm:pb-28">
-      {/* dezenter Hintergrund-Verlauf statt Stockfoto */}
+      {/* Hintergrundbild (Elektriker auf Baustelle) */}
       <div
-        className="pointer-events-none absolute inset-0 opacity-60"
+        className="pointer-events-none absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${images.hero})` }}
+        aria-hidden
+      />
+      {/* Dunkles Overlay fuer Textkontrast (WCAG AA) */}
+      <div
+        className="pointer-events-none absolute inset-0"
         style={{
           background:
-            'radial-gradient(60% 50% at 80% 0%, rgba(250,204,21,0.10) 0%, transparent 60%), radial-gradient(50% 50% at 0% 100%, rgba(250,204,21,0.06) 0%, transparent 55%)',
+            'linear-gradient(90deg, rgba(11,13,15,0.97) 0%, rgba(11,13,15,0.85) 45%, rgba(11,13,15,0.55) 100%), radial-gradient(60% 50% at 85% 0%, rgba(250,204,21,0.10) 0%, transparent 60%)',
         }}
         aria-hidden
       />
