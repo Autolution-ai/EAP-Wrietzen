@@ -1,8 +1,8 @@
 import { Suspense } from 'react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { Zap } from 'lucide-react';
 import { Funnel } from '@/components/funnel/Funnel';
+import { Logo } from '@/components/ui/Logo';
 import { company } from '@/lib/company';
 
 export const metadata: Metadata = {
@@ -17,11 +17,8 @@ export default function BewerbenPage() {
     <main className="min-h-screen bg-anthracite-950">
       <header className="border-b border-anthracite-800">
         <div className="container-content flex h-16 items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 font-extrabold text-white">
-            <span className="grid h-9 w-9 place-items-center rounded-md bg-signal text-anthracite-950">
-              <Zap className="h-5 w-5" aria-hidden />
-            </span>
-            <span className="text-lg">{company.shortName}</span>
+          <Link href="/" className="flex items-center text-white" aria-label={`${company.name} Startseite`}>
+            <Logo className="h-9 w-auto" />
           </Link>
           <Link href="/" className="text-sm text-anthracite-400 hover:text-white">
             Abbrechen

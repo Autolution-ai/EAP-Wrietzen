@@ -2,8 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { Menu, X, Zap } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { LinkButton } from '@/components/ui/Button';
+import { Logo } from '@/components/ui/Logo';
 import { company } from '@/lib/company';
 
 const links = [
@@ -31,11 +32,8 @@ export function Navbar() {
       }`}
     >
       <nav className="container-content flex h-16 items-center justify-between" aria-label="Hauptnavigation">
-        <Link href="/" className="flex items-center gap-2 font-extrabold text-white" aria-label={`${company.shortName} Startseite`}>
-          <span className="grid h-9 w-9 place-items-center rounded-md bg-signal text-anthracite-950">
-            <Zap className="h-5 w-5" aria-hidden />
-          </span>
-          <span className="text-lg tracking-tight">{company.shortName}</span>
+        <Link href="/" className="flex items-center text-white" aria-label={`${company.name} Startseite`}>
+          <Logo className="h-9 w-auto" />
         </Link>
 
         <ul className="hidden items-center gap-8 md:flex">

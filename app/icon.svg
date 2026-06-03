@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#FACC15"/>
-  <path d="M34 12 L18 40 H30 L28 52 L46 24 H34 Z" fill="#0B0D0F"/>
+  <rect width="64" height="64" rx="12" fill="#0B0D0F"/>
+  <rect x="6" y="44" width="52" height="8" rx="2" fill="#FACC15"/>
+  <text x="32" y="38" text-anchor="middle" font-family="Plus Jakarta Sans, Arial, sans-serif" font-weight="800" font-style="italic" font-size="26" fill="#FFFFFF" transform="skewX(-9) translate(4 0)">EAP</text>
 </svg>
