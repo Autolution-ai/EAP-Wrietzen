@@ -2,8 +2,9 @@
 // vor dem echten Go-Live zu ersetzen (Impressum-Pflicht DE).
 
 export const company = {
-  name: 'EAP', // TODO: vollstaendigen Firmennamen einsetzen (z. B. "EAP Elektroanlagen Wriezen GmbH")
+  name: 'EAP GmbH', // Elektro-Anlagen Petersdorf
   shortName: 'EAP',
+  tagline: 'Elektro-Anlagen Petersdorf',
   region: 'Wriezen / Märkisch-Oderland',
   city: 'Wriezen',
   // TODO: echte Kontaktdaten eintragen

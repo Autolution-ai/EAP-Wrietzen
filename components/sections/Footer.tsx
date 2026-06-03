@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { Zap, MapPin, Phone, Mail } from 'lucide-react';
+import { MapPin, Phone, Mail } from 'lucide-react';
+import { Logo } from '@/components/ui/Logo';
 import { company } from '@/lib/company';
 
 export function Footer() {
@@ -8,13 +9,8 @@ export function Footer() {
       <div className="container-content">
         <div className="grid gap-10 md:grid-cols-3">
           <div>
-            <div className="flex items-center gap-2 font-extrabold text-white">
-              <span className="grid h-9 w-9 place-items-center rounded-md bg-signal text-anthracite-950">
-                <Zap className="h-5 w-5" aria-hidden />
-              </span>
-              <span className="text-lg">{company.shortName}</span>
-            </div>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-anthracite-400">
+            <Logo full className="h-16 w-auto" />
+            <p className="mt-5 max-w-xs text-sm leading-relaxed text-anthracite-400">
               Elektrohandwerk aus {company.city}. Wir suchen Fachkräfte, die langfristig
               ins Team passen.
             </p>
